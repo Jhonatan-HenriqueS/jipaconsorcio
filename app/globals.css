@@ -625,8 +625,7 @@ svg {
   max-height: min(79svh, 850px);
   object-fit: contain;
   object-position: center bottom;
-  filter:
-    drop-shadow(1.35rem 1.45rem 1.15rem rgb(0 7 18 / 52%))
+  filter: drop-shadow(1.35rem 1.45rem 1.15rem rgb(0 7 18 / 52%))
     drop-shadow(0.25rem 0.45rem 0.25rem rgb(0 0 0 / 24%));
 }
 
@@ -2952,7 +2951,7 @@ svg {
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 10vw, 3rem);
+    font-size: clamp(2rem, 2.3rem, 3rem);
   }
 
   .simulator-card {
