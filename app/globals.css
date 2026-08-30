@@ -592,8 +592,29 @@ svg {
 
 .hero-person {
   position: relative;
+  isolation: isolate;
   align-self: end;
   margin: 0 -2rem 0;
+}
+
+.hero-person::after {
+  position: absolute;
+  z-index: 0;
+  right: 7%;
+  bottom: 4%;
+  left: 17%;
+  height: 11%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(0 6 16 / 64%) 0%,
+    rgb(0 6 16 / 38%) 42%,
+    transparent 74%
+  );
+  filter: blur(0.55rem);
+  transform: translate(0.65rem, 38%);
+  content: "";
+  pointer-events: none;
 }
 
 .hero-person img {
@@ -604,6 +625,9 @@ svg {
   max-height: min(79svh, 850px);
   object-fit: contain;
   object-position: center bottom;
+  filter:
+    drop-shadow(1.35rem 1.45rem 1.15rem rgb(0 7 18 / 52%))
+    drop-shadow(0.25rem 0.45rem 0.25rem rgb(0 0 0 / 24%));
 }
 
 .hero-person-frame {
@@ -1796,7 +1820,7 @@ svg {
 .education-section {
   display: grid;
   background: var(--brand-navy);
-  padding: var(--section-pad) max(1rem, calc((100vw - 1240px) / 2));
+  padding: var(--section-pad) max(1rem, calc((100vw - 1720px) / 2));
   grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
   align-items: center;
   gap: clamp(3rem, 8vw, 8rem);
