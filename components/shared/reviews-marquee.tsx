@@ -3,6 +3,8 @@ import { ExternalLink, Quote } from "lucide-react";
 import { reviews } from "@/data/reviews";
 
 function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
+  const authorInitial = review.author.trim().charAt(0).toLocaleUpperCase("pt-BR");
+
   return (
     <article className="review-card">
       <Quote aria-hidden="true" />
@@ -10,11 +12,16 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
         <p>“{review.quote}”</p>
       </blockquote>
       <footer>
-        <cite>{review.author}</cite>
-        <a href={review.source} target="_blank" rel="noreferrer">
-          Avaliação publicada no Google
-          <ExternalLink aria-hidden="true" />
-        </a>
+        <span className="review-avatar" aria-hidden="true">
+          {authorInitial}
+        </span>
+        <div className="review-author">
+          <cite>{review.author}</cite>
+          <a href={review.source} target="_blank" rel="noreferrer">
+            Avaliação publicada no Google
+            <ExternalLink aria-hidden="true" />
+          </a>
+        </div>
       </footer>
     </article>
   );

@@ -22,6 +22,7 @@ import { ReviewsMarquee } from "@/components/shared/reviews-marquee";
 import { ScrollRevealLoader } from "@/components/shared/scroll-reveal-loader";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { SimulatorAnchorNavigation } from "@/components/shared/simulator-anchor-navigation";
+import { Tilt3D } from "@/components/shared/tilt-3d";
 import { faqItems } from "@/data/faq";
 import { siteConfig } from "@/lib/site-config";
 import { getLocalBusinessJsonLd } from "@/lib/structured-data";
@@ -120,6 +121,8 @@ const consortiumBrands = [
       "Soluções flexíveis para imóveis, veículos e investimentos em diferentes fases da vida.",
   },
 ] as const;
+
+const tiltBrandSlugs = new Set(["disal", "yamaha", "hs"]);
 
 const benefits = [
   "Compare caminhos sem precisar decifrar tudo sozinho.",
@@ -342,9 +345,21 @@ export default function Home() {
             aria-label="Marcas parceiras apresentadas"
             data-reveal-stagger
           >
-            {consortiumBrands.map((brand) => (
-              <BrandPartnerCard {...brand} key={brand.name} />
-            ))}
+            {consortiumBrands.map((brand) => {
+              if (!tiltBrandSlugs.has(brand.slug)) {
+                return <BrandPartnerCard {...brand} key={brand.slug} />;
+              }
+
+              return (
+                <Tilt3D
+                  className="brand-card-tilt"
+                  identifier={brand.slug}
+                  key={brand.slug}
+                >
+                  <BrandPartnerCard {...brand} />
+                </Tilt3D>
+              );
+            })}
           </div>
         </section>
 
