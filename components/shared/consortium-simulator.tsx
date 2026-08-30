@@ -22,7 +22,7 @@ const categories = [
   "Veículos",
   "Motos",
   "Serviços",
-  "Planejamento patrimonial",
+  "Investimentos",
 ] as const;
 
 type SimulationMode = "Parcela" | "Crédito";

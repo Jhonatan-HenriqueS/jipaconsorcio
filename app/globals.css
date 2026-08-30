@@ -542,19 +542,19 @@ svg {
 }
 
 .hero h1::before {
-  top: -1.25rem;
-  left: -1rem;
-  border-top: 0.5rem solid;
-  border-left: 0.5rem solid;
-  border-radius: 0.9rem 0 0;
+  top: -1.5rem;
+  left: -2rem;
+  border-top: 0.75rem solid;
+  border-left: 0.75rem solid;
+  border-radius: 1.2rem 0 0;
 }
 
 .hero h1::after {
-  right: -0.55rem;
-  bottom: -0.75rem;
-  border-right: 0.5rem solid;
-  border-bottom: 0.5rem solid;
-  border-radius: 0 0 0.9rem;
+  right: 5.5rem;
+  bottom: -1.5rem;
+  border-right: 0.75rem solid;
+  border-bottom: 0.75rem solid;
+  border-radius: 0 0 1.2rem;
 }
 
 .hero-subtitle {

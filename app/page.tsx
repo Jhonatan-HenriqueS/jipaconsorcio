@@ -81,7 +81,7 @@ const categories = [
     featured: false,
   },
   {
-    title: "Planejamento patrimonial",
+    title: "Investimentos",
     description: "Estruture objetivos de médio e longo prazo.",
     image: "/images/modalidades/planejamento-patrimonial.webp",
     number: "05",
