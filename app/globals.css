@@ -781,8 +781,11 @@ svg {
   height: 100%;
   color: var(--brand-navy);
   padding: 0.7rem 0.85rem;
+  caret-color: transparent;
+  cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
+  user-select: none;
 }
 
 .simulator-combobox-control [data-slot="input-group-control"]:focus-visible,

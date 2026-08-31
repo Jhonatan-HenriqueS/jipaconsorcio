@@ -109,6 +109,7 @@ export function ConsortiumSimulator() {
           id={`${formId}-category`}
           className="simulator-combobox-control"
           autoComplete="off"
+          readOnly
           spellCheck={false}
         />
         <ComboboxContent className="simulator-combobox-content">
