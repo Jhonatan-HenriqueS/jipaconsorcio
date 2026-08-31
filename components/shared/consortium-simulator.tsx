@@ -4,6 +4,14 @@ import dynamic from "next/dynamic";
 import { useId, useMemo, useRef, useState, type CSSProperties } from "react";
 import { ArrowUpRight, Check, ShieldCheck } from "lucide-react";
 
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox";
 import { formatCurrency, onlyDigits } from "@/lib/whatsapp";
 
 const LeadDialog = dynamic(
@@ -25,7 +33,15 @@ const categories = [
   "Investimentos",
 ] as const;
 
+type Category = (typeof categories)[number];
 type SimulationMode = "Parcela" | "Crédito";
+
+function isCategory(value: unknown): value is Category {
+  return (
+    typeof value === "string" &&
+    (categories as readonly string[]).includes(value)
+  );
+}
 
 const modeRanges: Record<
   SimulationMode,
@@ -38,8 +54,7 @@ const modeRanges: Record<
 export function ConsortiumSimulator() {
   const formId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const [category, setCategory] =
-    useState<(typeof categories)[number]>("Imóveis");
+  const [category, setCategory] = useState<Category>("Imóveis");
   const [mode, setMode] = useState<SimulationMode>("Crédito");
   const [amount, setAmount] = useState(modeRanges.Crédito.initial);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -82,15 +97,35 @@ export function ConsortiumSimulator() {
       <label className="field-label" htmlFor={`${formId}-category`}>
         Tipo de consórcio
       </label>
-      <select
-        id={`${formId}-category`}
+      <Combobox
+        items={[...categories]}
         value={category}
-        onChange={(event) => setCategory(event.target.value as typeof category)}
+        onValueChange={(nextCategory) => {
+          if (isCategory(nextCategory)) setCategory(nextCategory);
+        }}
+        autoHighlight
       >
-        {categories.map((item) => (
-          <option key={item}>{item}</option>
-        ))}
-      </select>
+        <ComboboxInput
+          id={`${formId}-category`}
+          className="simulator-combobox-control"
+          autoComplete="off"
+          spellCheck={false}
+        />
+        <ComboboxContent className="simulator-combobox-content">
+          <ComboboxEmpty>Nenhuma modalidade encontrada.</ComboboxEmpty>
+          <ComboboxList className="simulator-combobox-list">
+            {(item: Category) => (
+              <ComboboxItem
+                className="simulator-combobox-item"
+                key={item}
+                value={item}
+              >
+                {item}
+              </ComboboxItem>
+            )}
+          </ComboboxList>
+        </ComboboxContent>
+      </Combobox>
 
       <fieldset className="mode-switch">
         <legend>Simular plano por</legend>
