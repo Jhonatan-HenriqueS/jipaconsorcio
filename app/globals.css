@@ -411,6 +411,16 @@ svg {
 
 /* Hero */
 .hero {
+  --hero-inline-gutter: max(1rem, calc((100vw - 1720px) / 2));
+  --hero-corner-inline-offset: min(
+    2rem,
+    2vw,
+    calc(var(--hero-inline-gutter) - 0.15rem)
+  );
+  --hero-corner-block-offset: clamp(0.95rem, 1.25vw, 1.5rem);
+  --hero-corner-stroke: clamp(0.45rem, 0.625vw, 0.75rem);
+  --hero-corner-radius: clamp(0.75rem, 1vw, 1.2rem);
+
   position: relative;
   isolation: isolate;
   min-height: 100svh;
@@ -504,20 +514,6 @@ svg {
   z-index: 2;
 }
 
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  margin-bottom: 3.5rem;
-  color: #cfd9e6;
-}
-
-.hero-eyebrow span {
-  width: 1.8rem;
-  height: 2px;
-  margin-right: 0.65rem;
-  background: var(--brand-red);
-}
-
 .hero h1 {
   position: relative;
   max-width: 830px;
@@ -530,8 +526,14 @@ svg {
   text-wrap: balance;
 }
 
-.hero h1::before,
-.hero h1::after {
+.hero-title-start,
+.hero-title-end {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title-start::before,
+.hero-title-end::after {
   position: absolute;
   width: clamp(2.75rem, 4.5vw, 4.75rem);
   height: clamp(2.15rem, 3.8vw, 4rem);
@@ -541,20 +543,20 @@ svg {
   pointer-events: none;
 }
 
-.hero h1::before {
-  top: -1.5rem;
-  left: -2rem;
-  border-top: 0.75rem solid;
-  border-left: 0.75rem solid;
-  border-radius: 1.2rem 0 0;
+.hero-title-start::before {
+  top: calc(0px - var(--hero-corner-block-offset));
+  left: calc(0px - var(--hero-corner-inline-offset));
+  border-top: var(--hero-corner-stroke) solid;
+  border-left: var(--hero-corner-stroke) solid;
+  border-radius: var(--hero-corner-radius) 0 0;
 }
 
-.hero h1::after {
-  right: 5.5rem;
-  bottom: -1.5rem;
-  border-right: 0.75rem solid;
-  border-bottom: 0.75rem solid;
-  border-radius: 0 0 1.2rem;
+.hero-title-end::after {
+  right: calc(0px - var(--hero-corner-inline-offset));
+  bottom: calc(0px - var(--hero-corner-block-offset));
+  border-right: var(--hero-corner-stroke) solid;
+  border-bottom: var(--hero-corner-stroke) solid;
+  border-radius: 0 0 var(--hero-corner-radius);
 }
 
 .hero-subtitle {
@@ -2766,7 +2768,7 @@ svg {
   }
 
   .categories-section {
-    border-radius: 0 0 1.35rem 1.35rem;
+    border-radius: 2rem 2rem 0 0;
   }
 
   .categories-shell {

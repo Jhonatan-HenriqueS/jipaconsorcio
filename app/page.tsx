@@ -178,12 +178,10 @@ export default function Home() {
           <div className="hero-architecture" aria-hidden="true" />
           <div className="hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow hero-eyebrow">
-                <span /> JIPA Consórcios · Ji-Paraná, RO
-              </p>
               <h1 id="hero-title">
-                Tire seus planos do papel com o <strong>consórcio</strong> ideal
-                para você em Ji-Paraná.{" "}
+                <span className="hero-title-start">Tire</span> seus planos do
+                papel com o <strong>consórcio</strong> ideal para você em{" "}
+                <span className="hero-title-end">Ji-Paraná.</span>
               </h1>
               <div className="hero-actions">
                 <a className="button button-primary" href="#simulador">
