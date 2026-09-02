@@ -408,13 +408,14 @@ svg {
 
 .mobile-menu-panel {
   display: flex;
-  width: min(100%, 40rem);
-  min-height: min(50rem, calc(100dvh - 2rem));
+  width: min(86vw, 36rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
   flex-direction: column;
   border: 1px solid rgb(213 221 230 / 86%);
   border-radius: clamp(1.25rem, 5vw, 1.75rem);
   background: #fff;
-  padding: clamp(1.15rem, 4vw, 2rem);
+  padding: clamp(0.9rem, 3vw, 1.25rem) clamp(1.15rem, 4vw, 2rem);
   box-shadow: 0 2rem 5rem rgb(0 10 28 / 34%);
   color: var(--brand-navy);
   animation: mobile-menu-panel-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -426,7 +427,7 @@ svg {
 
 .mobile-menu-panel-header {
   display: flex;
-  min-height: 3.5rem;
+  min-height: 3rem;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -454,8 +455,8 @@ svg {
 
 .mobile-menu-close {
   display: grid;
-  width: 3rem;
-  height: 3rem;
+  width: 2.65rem;
+  height: 2.65rem;
   flex: 0 0 auto;
   border: 0;
   border-radius: 50%;
@@ -466,8 +467,8 @@ svg {
 }
 
 .mobile-menu-close svg {
-  width: 1.65rem;
-  height: 1.65rem;
+  width: 1.45rem;
+  height: 1.45rem;
   stroke-width: 1.8;
 }
 
@@ -481,7 +482,7 @@ svg {
 }
 
 .mobile-menu-separator {
-  margin-block: clamp(0.85rem, 3vh, 1.5rem);
+  margin-block: clamp(0.5rem, 1.5vh, 0.85rem);
 }
 
 .mobile-menu-links {
@@ -494,7 +495,7 @@ svg {
 .mobile-menu-link {
   position: relative;
   display: grid;
-  min-height: clamp(4rem, 9.5vh, 5.25rem);
+  min-height: clamp(3rem, 6.5vh, 3.75rem);
   align-items: center;
   border-radius: 0.75rem;
   color: var(--brand-navy);
@@ -539,12 +540,12 @@ svg {
 }
 
 .mobile-menu-group-separator {
-  margin-block: clamp(0.4rem, 1.5vh, 0.85rem);
+  margin-block: clamp(0.3rem, 1vh, 0.65rem);
 }
 
 .mobile-menu-cta {
   display: grid;
-  min-height: clamp(3.8rem, 8vh, 4.5rem);
+  min-height: clamp(3.25rem, 6.5vh, 3.75rem);
   align-items: center;
   border-radius: 0.7rem;
   background: var(--button-red-fill);
