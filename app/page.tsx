@@ -296,9 +296,7 @@ export default function Home() {
                       <span className="category-badge" aria-hidden="true">
                         {category.featured ? "Destaque" : "Consórcio"}
                       </span>
-                      <span className="category-code" aria-hidden="true">
-                        JIPA—{category.number}
-                      </span>
+                      <span className="category-code" aria-hidden="true"></span>
                       <h3>{category.title}</h3>
                       <span className="category-visual" aria-hidden="true">
                         <Image
@@ -368,21 +366,38 @@ export default function Home() {
             description="Você não precisa entender tudo sobre consórcio para dar o primeiro passo. Precisa de alguém que escute seu objetivo e explique as condições sem pressa."
             align="center"
           />
-          <ol className="process-list" data-reveal-stagger>
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <li key={step.title}>
-                  <div className="process-icon">
-                    <Icon aria-hidden="true" />
-                    <span>0{index + 1}</span>
-                  </div>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </li>
-              );
-            })}
-          </ol>
+          <div className="process-journey" data-process-journey>
+            <svg
+              className="process-route"
+              aria-hidden="true"
+              focusable="false"
+              preserveAspectRatio="none"
+            >
+              <path
+                className="process-route-base"
+                data-process-route-base
+              />
+              <path
+                className="process-route-progress"
+                data-process-route-progress
+              />
+            </svg>
+            <ol className="process-list" data-reveal-stagger>
+              {steps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <li key={step.title}>
+                    <div className="process-icon">
+                      <Icon aria-hidden="true" />
+                      <span>0{index + 1}</span>
+                    </div>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
         </section>
 
         <section
