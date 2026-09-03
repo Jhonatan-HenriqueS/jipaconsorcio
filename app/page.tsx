@@ -4,7 +4,6 @@ import {
   ArrowDown,
   ArrowRight,
   BadgeCheck,
-  Check,
   ChevronDown,
   ClipboardCheck,
   FileSearch,
@@ -373,10 +372,7 @@ export default function Home() {
               focusable="false"
               preserveAspectRatio="none"
             >
-              <path
-                className="process-route-base"
-                data-process-route-base
-              />
+              <path className="process-route-base" data-process-route-base />
               <path
                 className="process-route-progress"
                 data-process-route-progress
@@ -478,30 +474,6 @@ export default function Home() {
               Analise propostas do mesmo período e modalidade.
             </p>
           </div>
-        </section>
-
-        <section
-          className="benefits-section section-shell"
-          aria-labelledby="benefits-title"
-        >
-          <div data-reveal>
-            <p className="eyebrow">Atendimento próximo</p>
-            <h2 id="benefits-title">
-              Entenda as condições. Compare. Depois decida.
-            </h2>
-            <p>
-              A JIPA começa entendendo o que você deseja conquistar, quanto
-              pretende investir por mês e qual prazo faz sentido.
-            </p>
-          </div>
-          <ul data-reveal-stagger>
-            {benefits.map((benefit) => (
-              <li key={benefit}>
-                <Check aria-hidden="true" />
-                {benefit}
-              </li>
-            ))}
-          </ul>
         </section>
 
         <section
