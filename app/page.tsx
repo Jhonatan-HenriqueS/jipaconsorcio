@@ -406,10 +406,10 @@ export default function Home() {
               O que é consórcio? Por que ele pode fazer sentido para você?
             </h2>
             <p>
-              Consórcio é uma reunião de pessoas físicas ou jurídicas em grupo,
-              promovida por administradora autorizada, para aquisição de bens ou
-              serviços por autofinanciamento. A contemplação ocorre conforme o
-              contrato, por sorteio ou lance.
+              Consórcio é um grupo de pessoas que se une para comprar um bem ou
+              serviço, pagando parcelas todos os meses. A cada mês, alguns
+              participantes recebem o crédito para realizar sua compra, por
+              sorteio ou lance, conforme as regras do contrato.
             </p>
             <a
               className="source-link"
@@ -447,23 +447,23 @@ export default function Home() {
                 <tbody>
                   <tr>
                     <th scope="row">Acesso ao bem</th>
-                    <td>Após contemplação por sorteio ou lance</td>
-                    <td>Normalmente após aprovação e contratação</td>
+                    <td>Quando for escolhido por sorteio ou lance</td>
+                    <td>Após o banco aprovar a compra</td>
                   </tr>
                   <tr>
                     <th scope="row">Custo principal</th>
-                    <td>Taxa de administração e possíveis encargos</td>
-                    <td>Juros e demais itens do CET</td>
+                    <td>Taxa de administração e outros custos</td>
+                    <td>Juros e outros custos da compra</td>
                   </tr>
                   <tr>
                     <th scope="row">Previsibilidade</th>
-                    <td>Não há data garantida de contemplação</td>
-                    <td>Parcelas seguem as condições do contrato</td>
+                    <td>Não há data certa para receber o crédito</td>
+                    <td>Parcelas definidas no contrato</td>
                   </tr>
                   <tr>
                     <th scope="row">Indicado para urgência?</th>
-                    <td>Pode não ser adequado</td>
-                    <td>Pode atender, sujeito à aprovação e custo</td>
+                    <td>Pode não ser ideal para quem tem pressa</td>
+                    <td>Pode atender, mas depende da aprovação e do custo</td>
                   </tr>
                 </tbody>
               </table>
@@ -506,13 +506,11 @@ export default function Home() {
             <p className="eyebrow">Sobre a JIPA</p>
             <h2 id="about-title">Atendimento que explica antes de vender.</h2>
             <p>
-              Na JIPA Consórcios, cada projeto começa com uma conversa clara.
-              Diego e Paula recebem quem deseja planejar uma conquista, entendem
-              o momento de cada pessoa e explicam as etapas sem pressa.
-            </p>
-            <p>
-              A proposta é tornar o consórcio mais fácil de compreender — com
-              atendimento próximo, transparência e acompanhamento.
+              Na JIPA Consórcios, você não precisa entender de consórcio. Diego
+              e Paula entendem o que você quer conquistar, explicam tudo de
+              forma simples e mostram o melhor caminho para chegar lá.
+              Atendimento próximo, transparência em cada etapa e acompanhamento
+              do início à conquista.
             </p>
             <div className="about-proof">
               <BadgeCheck aria-hidden="true" />

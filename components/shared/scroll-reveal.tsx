@@ -249,7 +249,8 @@ export function ScrollReveal() {
             ease: "power3.out",
             onComplete: () =>
               gsap.set(element, {
-                clearProps: "opacity,visibility,transform,translate,scale,rotate,willChange",
+                clearProps:
+                  "opacity,visibility,transform,translate,scale,rotate,willChange",
               }),
             scrollTrigger: {
               trigger: element,
@@ -282,7 +283,8 @@ export function ScrollReveal() {
             ease: "power3.out",
             onComplete: () =>
               gsap.set(items, {
-                clearProps: "opacity,visibility,transform,translate,scale,rotate,willChange",
+                clearProps:
+                  "opacity,visibility,transform,translate,scale,rotate,willChange",
               }),
             scrollTrigger: {
               trigger: group,
