@@ -190,12 +190,13 @@ function setupProcessJourney() {
       ease: "none",
       scrollTrigger: {
         trigger: journeyRoot,
-        start: "top 76%",
-        end: "bottom 24%",
-        scrub: 0.35,
+        start: "top 85%",
+        end: "bottom 25%",
+        scrub: 0.2,
+        invalidateOnRefresh: true,
       },
     });
-    routeTween.scrollTrigger?.refresh();
+    ScrollTrigger.refresh();
   }
 
   function scheduleRouteDraw() {
@@ -210,15 +211,20 @@ function setupProcessJourney() {
 
   resizeObserver?.observe(processList);
   window.addEventListener("resize", scheduleRouteDraw, { passive: true });
+  window.addEventListener("load", scheduleRouteDraw, { passive: true });
   motionPreference.addEventListener("change", scheduleRouteDraw);
   void document.fonts.ready.then(scheduleRouteDraw);
-  drawRoute();
+
+  scheduleRouteDraw();
+  const timerId = setTimeout(scheduleRouteDraw, 400);
 
   return () => {
     disposed = true;
+    clearTimeout(timerId);
     window.cancelAnimationFrame(animationFrame);
     resizeObserver?.disconnect();
     window.removeEventListener("resize", scheduleRouteDraw);
+    window.removeEventListener("load", scheduleRouteDraw);
     motionPreference.removeEventListener("change", scheduleRouteDraw);
     clearRouteTween();
     delete journeyRoot.dataset.routeReady;

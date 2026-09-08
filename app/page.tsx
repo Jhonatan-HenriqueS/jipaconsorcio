@@ -281,16 +281,14 @@ export default function Home() {
               <ul className="category-grid" data-reveal-stagger>
                 {categories.map((category) => (
                   <li
-                    className={`category-item${
-                      category.featured ? " category-item-featured" : ""
-                    }`}
+                    className={`category-item${category.featured ? " category-item-featured" : ""
+                      }`}
                     key={category.title}
                   >
                     <a
                       href="#simulador"
-                      className={`category-card${
-                        category.featured ? " category-card-featured" : ""
-                      }`}
+                      className={`category-card${category.featured ? " category-card-featured" : ""
+                        }`}
                     >
                       <span className="category-badge" aria-hidden="true">
                         {category.featured ? "Destaque" : "Consórcio"}
@@ -401,15 +399,21 @@ export default function Home() {
           aria-labelledby="education-title"
         >
           <div className="education-intro" data-reveal>
-            <p className="eyebrow">Entenda antes de decidir</p>
+            <div className="education-eyebrow">
+              <span className="education-eyebrow-line" aria-hidden="true" />
+              <span className="eyebrow">ENTENDA ANTES DE DECIDIR</span>
+            </div>
             <h2 id="education-title">
-              O que é consórcio? Por que ele pode fazer sentido para você?
+              O que é consórcio?<br />
+              Por que ele pode<br />
+              fazer sentido<br />
+              para você?
             </h2>
             <p>
-              Consórcio é um grupo de pessoas que se une para comprar um bem ou
-              serviço, pagando parcelas todos os meses. A cada mês, alguns
-              participantes recebem o crédito para realizar sua compra, por
-              sorteio ou lance, conforme as regras do contrato.
+              Consórcio é uma reunião de pessoas físicas ou jurídicas em grupo,
+              promovida por administradora autorizada, para a aquisição de bens
+              ou serviços por autofinanciamento. A contemplação ocorre
+              conforme o contrato, por sorteio ou lance.
             </p>
             <a
               className="source-link"
@@ -417,62 +421,90 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              Consulte as orientações do Banco Central
+              <span>Consulte as orientações do Banco Central</span>
               <ArrowRight aria-hidden="true" />
             </a>
           </div>
 
           <div className="comparison-card" data-reveal>
-            <div className="comparison-heading">
-              <Scale aria-hidden="true" />
+            <div className="comparison-card-header">
               <div>
-                <span>Comparação qualitativa</span>
-                <h3>Consórcio × financiamento</h3>
+                <span className="comparison-eyebrow">COMPARE AS MODALIDADES</span>
+                <h3 className="comparison-title">Consórcio × financiamento</h3>
+              </div>
+              <div className="comparison-legend" aria-label="Legenda do gráfico">
+                <div className="legend-item">
+                  <span className="legend-dot legend-dot-consorcio" aria-hidden="true" />
+                  <span>Consórcio</span>
+                </div>
+                <div className="legend-item">
+                  <span className="legend-dot legend-dot-financiamento" aria-hidden="true" />
+                  <span>Financiamento</span>
+                </div>
               </div>
             </div>
+
             <div
-              className="comparison-table-wrap"
-              role="region"
-              aria-label="Comparação entre consórcio e financiamento"
-              tabIndex={0}
+              className="chart-container"
+              role="img"
+              aria-label="Gráfico comparando taxas anuais médias de Consórcio e Financiamento. Taxa de juros: Consórcio 1% a.a. versus Financiamento 8% a.a. Outros bancos: Consórcio 2% a.a. versus Financiamento 22% a.a."
             >
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col">Critério</th>
-                    <th scope="col">Consórcio</th>
-                    <th scope="col">Financiamento</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Acesso ao bem</th>
-                    <td>Quando for escolhido por sorteio ou lance</td>
-                    <td>Após o banco aprovar a compra</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Custo principal</th>
-                    <td>Taxa de administração e outros custos</td>
-                    <td>Juros e outros custos da compra</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Previsibilidade</th>
-                    <td>Não há data certa para receber o crédito</td>
-                    <td>Parcelas definidas no contrato</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Indicado para urgência?</th>
-                    <td>Pode não ser ideal para quem tem pressa</td>
-                    <td>Pode atender, mas depende da aprovação e do custo</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="chart-y-axis-label">% a.a.</div>
+
+              <div className="chart-body">
+                <div className="chart-y-ticks" aria-hidden="true">
+                  <span>25</span>
+                  <span>20</span>
+                  <span>15</span>
+                  <span>10</span>
+                  <span>5</span>
+                  <span>0</span>
+                </div>
+
+                <div className="chart-plot-area">
+                  <div className="chart-grid-lines" aria-hidden="true">
+                    <span className="grid-line" />
+                    <span className="grid-line" />
+                    <span className="grid-line" />
+                    <span className="grid-line" />
+                    <span className="grid-line" />
+                    <span className="grid-line grid-line-bottom" />
+                  </div>
+
+                  <div className="chart-bars-wrapper">
+                    <div className="chart-bar-pair">
+                      <div className="chart-bar-col">
+                        <span className="bar-val val-blue">1% a.a.</span>
+                        <div className="bar-fill bar-consorcio" style={{ height: "4%" }} />
+                      </div>
+                      <div className="chart-bar-col">
+                        <span className="bar-val val-navy">8% a.a.</span>
+                        <div className="bar-fill bar-financiamento" style={{ height: "32%" }} />
+                      </div>
+                    </div>
+
+                    <div className="chart-bar-pair">
+                      <div className="chart-bar-col">
+                        <span className="bar-val val-blue">2% a.a.</span>
+                        <div className="bar-fill bar-consorcio" style={{ height: "8%" }} />
+                      </div>
+                      <div className="chart-bar-col">
+                        <span className="bar-val val-navy">22% a.a.</span>
+                        <div className="bar-fill bar-financiamento" style={{ height: "88%" }} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="chart-x-row" aria-hidden="true">
+                <div className="chart-x-spacer" />
+                <div className="chart-x-labels">
+                  <span>Taxa de juros</span>
+                  <span>Outros bancos</span>
+                </div>
+              </div>
             </div>
-            <p className="comparison-note">
-              Não exibimos percentuais genéricos porque juros anuais e taxa
-              total de administração não são métricas diretamente comparáveis.
-              Analise propostas do mesmo período e modalidade.
-            </p>
           </div>
         </section>
 
