@@ -2235,7 +2235,9 @@ svg {
   text-decoration: none;
   border-bottom: 2px solid #2563eb;
   padding-bottom: 0.35rem;
-  transition: color 180ms ease, border-color 180ms ease;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
 }
 
 .source-link:hover {
@@ -2547,7 +2549,7 @@ svg {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 30%;
+  width: 38%;
   border: 8px solid var(--brand-cream);
 }
 

@@ -75,7 +75,7 @@ const categories = [
   {
     title: "Investimentos",
     description: "Estruture objetivos de médio e longo prazo.",
-    image: "/images/modalidades/planejamento-patrimonial.webp",
+    image: "/images/modalidades/planejamento-patrimonial.png",
     number: "04",
     featured: false,
   },
@@ -547,7 +547,7 @@ export default function Home() {
             </figure>
             <figure className="about-facade">
               <Image
-                src="/images/jipa-fachada.webp"
+                src="/images/DIegoEscolha.jpeg"
                 alt="Fachada da JIPA Consórcios em Ji-Paraná"
                 width={676}
                 height={1200}
