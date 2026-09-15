@@ -73,17 +73,10 @@ const categories = [
     featured: true,
   },
   {
-    title: "Serviços",
-    description: "Organize reformas, viagens e outros projetos.",
-    image: "/images/modalidades/servicos.webp",
-    number: "04",
-    featured: false,
-  },
-  {
     title: "Investimentos",
     description: "Estruture objetivos de médio e longo prazo.",
     image: "/images/modalidades/planejamento-patrimonial.webp",
-    number: "05",
+    number: "04",
     featured: false,
   },
 ] as const;
@@ -281,14 +274,16 @@ export default function Home() {
               <ul className="category-grid" data-reveal-stagger>
                 {categories.map((category) => (
                   <li
-                    className={`category-item${category.featured ? " category-item-featured" : ""
-                      }`}
+                    className={`category-item${
+                      category.featured ? " category-item-featured" : ""
+                    }`}
                     key={category.title}
                   >
                     <a
                       href="#simulador"
-                      className={`category-card${category.featured ? " category-card-featured" : ""
-                        }`}
+                      className={`category-card${
+                        category.featured ? " category-card-featured" : ""
+                      }`}
                     >
                       <span className="category-badge" aria-hidden="true">
                         {category.featured ? "Destaque" : "Consórcio"}
@@ -404,16 +399,19 @@ export default function Home() {
               <span className="eyebrow">ENTENDA ANTES DE DECIDIR</span>
             </div>
             <h2 id="education-title">
-              O que é consórcio?<br />
-              Por que ele pode<br />
-              fazer sentido<br />
+              O que é consórcio?
+              <br />
+              Por que ele pode
+              <br />
+              fazer sentido
+              <br />
               para você?
             </h2>
             <p>
               Consórcio é uma reunião de pessoas físicas ou jurídicas em grupo,
               promovida por administradora autorizada, para a aquisição de bens
-              ou serviços por autofinanciamento. A contemplação ocorre
-              conforme o contrato, por sorteio ou lance.
+              ou serviços por autofinanciamento. A contemplação ocorre conforme
+              o contrato, por sorteio ou lance.
             </p>
             <a
               className="source-link"
@@ -429,16 +427,27 @@ export default function Home() {
           <div className="comparison-card" data-reveal>
             <div className="comparison-card-header">
               <div>
-                <span className="comparison-eyebrow">COMPARE AS MODALIDADES</span>
+                <span className="comparison-eyebrow">
+                  COMPARE AS MODALIDADES
+                </span>
                 <h3 className="comparison-title">Consórcio × financiamento</h3>
               </div>
-              <div className="comparison-legend" aria-label="Legenda do gráfico">
+              <div
+                className="comparison-legend"
+                aria-label="Legenda do gráfico"
+              >
                 <div className="legend-item">
-                  <span className="legend-dot legend-dot-consorcio" aria-hidden="true" />
+                  <span
+                    className="legend-dot legend-dot-consorcio"
+                    aria-hidden="true"
+                  />
                   <span>Consórcio</span>
                 </div>
                 <div className="legend-item">
-                  <span className="legend-dot legend-dot-financiamento" aria-hidden="true" />
+                  <span
+                    className="legend-dot legend-dot-financiamento"
+                    aria-hidden="true"
+                  />
                   <span>Financiamento</span>
                 </div>
               </div>
@@ -475,22 +484,34 @@ export default function Home() {
                     <div className="chart-bar-pair">
                       <div className="chart-bar-col">
                         <span className="bar-val val-blue">1% a.a.</span>
-                        <div className="bar-fill bar-consorcio" style={{ height: "4%" }} />
+                        <div
+                          className="bar-fill bar-consorcio"
+                          style={{ height: "4%" }}
+                        />
                       </div>
                       <div className="chart-bar-col">
                         <span className="bar-val val-navy">8% a.a.</span>
-                        <div className="bar-fill bar-financiamento" style={{ height: "32%" }} />
+                        <div
+                          className="bar-fill bar-financiamento"
+                          style={{ height: "32%" }}
+                        />
                       </div>
                     </div>
 
                     <div className="chart-bar-pair">
                       <div className="chart-bar-col">
                         <span className="bar-val val-blue">2% a.a.</span>
-                        <div className="bar-fill bar-consorcio" style={{ height: "8%" }} />
+                        <div
+                          className="bar-fill bar-consorcio"
+                          style={{ height: "8%" }}
+                        />
                       </div>
                       <div className="chart-bar-col">
                         <span className="bar-val val-navy">22% a.a.</span>
-                        <div className="bar-fill bar-financiamento" style={{ height: "88%" }} />
+                        <div
+                          className="bar-fill bar-financiamento"
+                          style={{ height: "88%" }}
+                        />
                       </div>
                     </div>
                   </div>
