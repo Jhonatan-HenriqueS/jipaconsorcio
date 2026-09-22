@@ -11,13 +11,16 @@ import {
   MapPin,
   MessageCircle,
   Scale,
+  ShieldCheck,
+  Star,
+  UsersRound,
 } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { BrandPartnerCard } from "@/components/shared/brand-partner-card";
+import { ConquestsMarquee } from "@/components/shared/conquests-marquee";
 import { ConsortiumSimulator } from "@/components/shared/consortium-simulator";
-import { ReviewsMarquee } from "@/components/shared/reviews-marquee";
 import { ScrollRevealLoader } from "@/components/shared/scroll-reveal-loader";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { SimulatorAnchorNavigation } from "@/components/shared/simulator-anchor-navigation";
@@ -75,7 +78,7 @@ const categories = [
   {
     title: "Investimentos",
     description: "Estruture objetivos de médio e longo prazo.",
-    image: "/images/modalidades/planejamento-patrimonial.png",
+    image: "/images/modalidades/planejamento-patrimonial-v2.webp",
     number: "04",
     featured: false,
   },
@@ -146,6 +149,7 @@ const steps = [
   },
 ] as const;
 
+
 export default function Home() {
   const jsonLd = getLocalBusinessJsonLd();
   const mapsEmbed = `https://www.google.com/maps?q=${siteConfig.coordinates.latitude},${siteConfig.coordinates.longitude}&z=16&output=embed`;
@@ -194,7 +198,7 @@ export default function Home() {
             <figure className="hero-person">
               <div className="hero-person-frame" aria-hidden="true" />
               <Image
-                src="/images/diego-miranda.png"
+                src="/images/diegoTeste.png"
                 alt="Diego Miranda, especialista da JIPA Consórcios"
                 width={760}
                 height={950}
@@ -584,16 +588,16 @@ export default function Home() {
           id="avaliacoes"
           aria-labelledby="reviews-title"
         >
-          <div className="section-shell">
+          <div className="section-shell reviews-intro">
             <SectionHeading
               id="reviews-title"
               eyebrow="Experiências reais"
               title="Quem conversa com a JIPA percebe a diferença."
-              description="Atendimento claro, confiança e disponibilidade aparecem repetidamente nas experiências compartilhadas por clientes da empresa no Google."
+              description="Cada foto registra uma conquista vivida por clientes da JIPA — da contemplação à realização de um novo projeto."
               inverse
             />
           </div>
-          <ReviewsMarquee />
+          <ConquestsMarquee />
         </section>
 
         <section className="faq-section section-shell" id="duvidas">

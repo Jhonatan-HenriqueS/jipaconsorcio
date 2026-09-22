@@ -25,13 +25,7 @@ const LeadDialog = dynamic(
   },
 );
 
-const categories = [
-  "Imóveis",
-  "Veículos",
-  "Motos",
-  "Serviços",
-  "Investimentos",
-] as const;
+const categories = ["Imóveis", "Veículos", "Motos", "Investimentos"] as const;
 
 type Category = (typeof categories)[number];
 type SimulationMode = "Parcela" | "Crédito";
