@@ -119,15 +119,6 @@ const consortiumBrands = [
 
 const tiltBrandSlugs = new Set(["disal", "yamaha", "hs"]);
 
-const benefits = [
-  "Compare caminhos sem precisar decifrar tudo sozinho.",
-  "Entenda como parcelas, taxas, lances e contemplação funcionam.",
-  "Escolha uma modalidade coerente com seu objetivo.",
-  "Receba atendimento próximo antes e depois da contratação.",
-  "Converse com uma equipe local, em Ji-Paraná.",
-  "Comece com uma simulação simples, sem obrigação de contratar.",
-];
-
 const steps = [
   {
     title: "A conversa começa pelo seu objetivo",
@@ -149,6 +140,23 @@ const steps = [
   },
 ] as const;
 
+const reviewHighlights = [
+  {
+    value: "+350",
+    detail: "Clientes contemplados",
+    icon: UsersRound,
+  },
+  {
+    value: "Atendimento personalizado",
+    detail: "Do início ao final",
+    icon: Star,
+  },
+  {
+    value: "Segurança e confiança",
+    detail: "Com a JIPA",
+    icon: ShieldCheck,
+  },
+] as const;
 
 export default function Home() {
   const jsonLd = getLocalBusinessJsonLd();
@@ -593,9 +601,28 @@ export default function Home() {
               id="reviews-title"
               eyebrow="Experiências reais"
               title="Quem conversa com a JIPA percebe a diferença."
-              description="Cada foto registra uma conquista vivida por clientes da JIPA — da contemplação à realização de um novo projeto."
+              description="Cada foto registra uma conquista vivida por clientes da JIPA da contemplação à realização de um novo projeto."
               inverse
             />
+            <ul
+              className="reviews-highlights"
+              aria-label="Diferenciais da JIPA Consórcios"
+              data-reveal-stagger
+            >
+              {reviewHighlights.map((highlight) => {
+                const Icon = highlight.icon;
+
+                return (
+                  <li className="reviews-highlight" key={highlight.value}>
+                    <span className="reviews-highlight-icon" aria-hidden="true">
+                      <Icon />
+                    </span>
+                    <strong>{highlight.value}</strong>
+                    <span>{highlight.detail}</span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
           <ConquestsMarquee />
         </section>

@@ -56,7 +56,6 @@ function ConquestCard({
         sizes="(max-width: 640px) 72vw, 320px"
       />
       <figcaption>
-        <span>{String(index + 1).padStart(2, "0")}</span>
         <strong>{conquest.caption}</strong>
       </figcaption>
     </figure>

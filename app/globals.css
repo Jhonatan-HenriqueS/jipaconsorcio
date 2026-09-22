@@ -803,6 +803,20 @@ svg {
     drop-shadow(0.25rem 0.45rem 0.25rem rgb(0 0 0 / 24%));
 }
 
+@media (min-width: 1200px) {
+  .hero-person {
+    align-self: center;
+  }
+
+  .hero-person img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: min(68svh, 750px);
+    margin-inline: auto;
+  }
+}
+
 .hero-person-frame {
   position: absolute;
   right: 4%;
@@ -2589,7 +2603,75 @@ svg {
 }
 
 .reviews-section .section-shell {
-  padding-bottom: 1.5rem;
+  width: min(100% - clamp(2rem, 6vw, 7rem), 1680px);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.reviews-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(3rem, 5vw, 5.5rem);
+}
+
+.reviews-intro .section-heading {
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
+.reviews-intro .section-heading h2 {
+  font-size: clamp(2.5rem, 4vw, 4.3rem);
+}
+
+.reviews-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  margin: 0;
+  border-left: 1px solid rgb(255 255 255 / 24%);
+  padding: 0 0 0 clamp(2rem, 3.5vw, 4rem);
+  list-style: none;
+}
+
+.reviews-highlight {
+  min-width: 0;
+  color: white;
+}
+
+.reviews-highlight-icon {
+  display: grid;
+  width: 3.35rem;
+  height: 3.35rem;
+  place-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid rgb(143 184 224 / 38%);
+  border-radius: 50%;
+  color: #e5f1fc;
+}
+
+.reviews-highlight-icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+  stroke-width: 1.65;
+}
+
+.reviews-highlight strong,
+.reviews-highlight > span:last-child {
+  display: block;
+}
+
+.reviews-highlight strong {
+  max-width: 10rem;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+.reviews-highlight > span:last-child {
+  margin-top: 0.4rem;
+  color: #b9c9da;
+  font-size: 0.84rem;
+  line-height: 1.35;
 }
 
 .reviews-marquee {
@@ -3286,6 +3368,21 @@ svg {
     max-width: 650px;
   }
 
+  .reviews-intro {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .reviews-intro .section-heading {
+    max-width: 720px;
+  }
+
+  .reviews-highlights {
+    border-top: 1px solid rgb(255 255 255 / 24%);
+    border-left: 0;
+    padding: 2rem 0 0;
+  }
+
   .faq-intro {
     position: static;
   }
@@ -3568,6 +3665,33 @@ svg {
 
   .about-facade {
     width: 35%;
+  }
+
+  .reviews-highlights {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 1rem;
+  }
+
+  .reviews-highlight {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: center;
+    padding-block: 1rem;
+  }
+
+  .reviews-highlight + .reviews-highlight {
+    border-top: 1px solid rgb(143 184 224 / 16%);
+  }
+
+  .reviews-highlight-icon {
+    grid-row: 1 / span 2;
+    margin-bottom: 0;
+  }
+
+  .reviews-highlight > span:last-child {
+    margin-top: 0.2rem;
   }
 
   .faq-content {
