@@ -236,7 +236,7 @@ export default function Home() {
           data-reveal-stagger
         >
           <div className="clarity-statement">
-            <p className="eyebrow">Clareza antes da escolha</p>
+            <p className="eyebrow ">Clareza antes da escolha</p>
             <h2 id="clarity-title">
               Um bem importante pede uma decisão que caiba na vida real.
             </h2>
@@ -260,7 +260,7 @@ export default function Home() {
             <div className="categories-intro">
               <SectionHeading
                 id="modalidades-title"
-                eyebrow="Modalidades"
+                eyebrow=""
                 title="Escolha o projeto que você quer realizar."
                 inverse
               />
@@ -330,7 +330,7 @@ export default function Home() {
 
         <section className="brands-editorial" aria-labelledby="brands-title">
           <div className="brands-editorial-copy" data-reveal>
-            <p className="eyebrow">Marcas parceiras</p>
+            <p className="eyebrow hidden">Marcas parceiras</p>
             <h2 id="brands-title">
               Três especialistas. Mais caminhos para realizar.
             </h2>
@@ -568,7 +568,7 @@ export default function Home() {
             </figure>
           </div>
           <div className="about-copy" data-reveal>
-            <p className="eyebrow">Sobre a JIPA</p>
+            <p className="eyebrow hidden">Sobre a JIPA</p>
             <h2 id="about-title">Atendimento que explica antes de vender.</h2>
             <p>
               Na JIPA Consórcios, você não precisa entender de consórcio. Diego
@@ -599,7 +599,7 @@ export default function Home() {
           <div className="section-shell reviews-intro">
             <SectionHeading
               id="reviews-title"
-              eyebrow="Experiências reais"
+              eyebrow=""
               title="Quem conversa com a JIPA percebe a diferença."
               description="Cada foto registra uma conquista vivida por clientes da JIPA da contemplação à realização de um novo projeto."
               inverse
@@ -629,7 +629,7 @@ export default function Home() {
 
         <section className="faq-section section-shell" id="duvidas">
           <div className="faq-intro" data-reveal>
-            <p className="eyebrow">Dúvidas frequentes</p>
+            <p className="eyebrow hidden">Dúvidas frequentes</p>
             <h2>Respostas diretas para decidir com mais segurança.</h2>
             <p>
               Regras podem variar entre grupos. Leia o contrato e confirme cada
@@ -667,7 +667,7 @@ export default function Home() {
           aria-labelledby="location-title"
         >
           <div className="location-info" data-reveal>
-            <p className="eyebrow">Onde estamos</p>
+            <p className="eyebrow hidden">Onde estamos</p>
             <h2 id="location-title">A JIPA está perto de você.</h2>
             <p>
               Visite a equipe em Ji-Paraná, em frente ao Supermercado Tai Max.

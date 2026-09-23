@@ -19,7 +19,10 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <header
-      className={cn("section-heading", align === "center" && "section-heading-center")}
+      className={cn(
+        "section-heading",
+        align === "center" && "section-heading-center",
+      )}
       data-inverse={inverse || undefined}
       data-reveal
     >
