@@ -53,7 +53,7 @@ function ConquestCard({
         src={conquest.src}
         alt={decorative ? "" : conquest.alt}
         fill
-        sizes="(max-width: 640px) 72vw, 320px"
+        sizes="(max-width: 640px) 84vw, 360px"
       />
       <figcaption>
         <strong>{conquest.caption}</strong>

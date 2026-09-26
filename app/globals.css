@@ -2704,7 +2704,7 @@ svg {
 }
 
 .conquests-marquee .reviews-track li {
-  width: min(78vw, 320px);
+  width: min(84vw, 360px);
 }
 
 .conquest-card {
@@ -2714,7 +2714,7 @@ svg {
   margin: 0;
   aspect-ratio: 4 / 5;
   border: 1px solid rgb(255 255 255 / 18%);
-  border-radius: 20px;
+  border-radius: 10px;
   background: #142f4e;
   box-shadow: 0 14px 34px rgb(1 13 30 / 18%);
   color: white;
